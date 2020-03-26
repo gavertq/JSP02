@@ -15,18 +15,18 @@ hr{width: 150px; float: left;}
 	<%response.setCharacterEncoding("utf-8"); %>
 			
 	<%	
+		out.print("<b>request.getParameterNames()메서드 사용</b><br>");
+	
 		Enumeration paramEnum = request.getParameterNames();
 	
-		while(paramEnum.hasMoreElements()){
-			
+		while(paramEnum.hasMoreElements()){			
 			String name = (String)paramEnum.nextElement(); //요소 name 가져오기
 			String[] result = request.getParameterValues(name); //name에 해당하는 결과 가져오기
 			
 			if(result != null){ //선택되어 있다면
 				for(String r:result){out.print(name+": "+r+" <br>");}				
 			}
-			out.print("<hr><br>");
-			
+			out.print("<hr><br>");			
 		}
 	%>
 </body>

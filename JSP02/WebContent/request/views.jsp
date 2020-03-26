@@ -25,6 +25,8 @@
 		}
 		
 		//input타입의 name들을 가져온다. 타입 text는 내용이 없어도 가져오는데 radio, checkbox 체크를 해야 가져오는 듯
+		//위처럼 지정해서 name을 가져오면 hard coding.. 한 곳의 name을 바꾸면 모든 파일의 name을 일일히 찾아가서 바꿔야하는 수고가 발생한다
+		//대책으로 아래의 enumeration을 사용하면 메소드로 name을 자동으로 가져오기 때문에 모든 파일의 name을 찾아가서 바꾸는 수고를 하지 않아도 된다.
 		Enumeration paramEnum = request.getParameterNames();
 		while(paramEnum.hasMoreElements()){
 			String name = (String)paramEnum.nextElement();
